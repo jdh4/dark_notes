@@ -84,6 +84,15 @@ nsys profile -f true --stats=true python myscript.py
 
 You can either download the `qdrep` file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use `nsight-sys` on that machine.
 
+## Nsight Compute for Detailed GPU Kernel Profiling
+
+This tool is available via the CUDA Toolkit on all of our clusters:
+
+```
+module load cudatoolkit/10.2
+nv-nsight-cu-cli  # or nv-nsight-cu for GUI
+```
+
 ## line_prof for Profiling
 
 The [line_prof](https://github.com/rkern/line_profiler) tool provides profiling info for each line of a function.
