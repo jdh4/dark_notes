@@ -182,7 +182,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 ## Monitoring GPU Utilization
 
-See the procedure at the bottom of [this page](https://researchcomputing.princeton.edu/tigergpu-utilization). Considering using this alias which will put you on the compute node where your most recent job is running:
+See the procedure at the bottom of [this page](https://researchcomputing.princeton.edu/tigergpu-utilization). Consider using this alias which will put you on the compute node where your most recent job is running:
 
 ```
 goto() { ssh $(squeue -u $USER | tail -1 | tr -s [:blank:] | cut -d' ' --fields=9); }
