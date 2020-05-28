@@ -86,7 +86,7 @@ You can either download the profiling file to your local machine to use `nsight-
 
 ## line_prof for Profiling
 
-The [line_prof](line_profiler(link is external)) tool provides profiling info for each line of a function.
+The [line_prof](https://github.com/rkern/line_profiler) tool provides profiling info for each line of a function.
 
 First add decorators to the function(s) in the Python script (myscript.py):
 
