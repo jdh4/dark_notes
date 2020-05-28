@@ -65,6 +65,8 @@ $ salloc --nodes=1 --ntasks=4 --time 30:00 --mem=8G --gres=gpu:1
 
 ## Nsight Systems for Profiling
 
+Nsight Systems [getting started guide](https://docs.nvidia.com/nsight-systems/).
+
 ```
 #!/bin/bash
 #SBATCH --job-name=dark          # create a short name for your job
