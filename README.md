@@ -88,7 +88,7 @@ You can either download the `qdrep` file to your local machine to use `nsight-sy
 
 ## Nsight Compute for Detailed GPU Kernel Profiling
 
-This tool is available via the CUDA Toolkit on all of our clusters:
+See the NVIDIA [documentation](https://docs.nvidia.com/nsight-compute/). This tool is available via the CUDA Toolkit on all of our clusters:
 
 ```
 module load cudatoolkit/10.2
