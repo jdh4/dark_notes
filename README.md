@@ -184,6 +184,10 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 See the procedure at the bottom of [this page](https://researchcomputing.princeton.edu/tigergpu-utilization).
 
+## Intro to GPU Programming at Princeton
+
+[https://github.com/PrincetonUniversity/gpu_programming_intro](https://github.com/PrincetonUniversity/gpu_programming_intro)
+
 ## DDT and MAP
 
 We have the DDT parallel debugger which can be used for CUDA kernels. MAP is a general purpose profiler which can provide info on CUDA kernels and MPI calls.
