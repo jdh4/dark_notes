@@ -200,6 +200,8 @@ See the procedure at the bottom of [this page](https://researchcomputing.princet
 goto() { ssh $(squeue -u $USER | tail -1 | tr -s [:blank:] | cut -d' ' --fields=9); }
 ```
 
+From there you can run `nvidia-smi` or `gpustat`.
+
 ## Intro to GPU Programming at Princeton
 
 [https://github.com/PrincetonUniversity/gpu_programming_intro](https://github.com/PrincetonUniversity/gpu_programming_intro)
