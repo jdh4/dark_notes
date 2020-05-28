@@ -2,8 +2,8 @@
 
 ```bash
 $ ssh <YourNetID>@tigergpu.princeton.edu
-$ mkdir software  # or another name
-$ cd software
+$ mkdir -p software/dark  # or another name
+$ cd software/dark
 $ cp /scratch/gpfs/jdh4/dark_env.sh .
 $ bash dark_env.sh | tee build.log
 ```
