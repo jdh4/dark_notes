@@ -1,3 +1,5 @@
+# Dark Matter Notes
+
 ## Creating the Environment
 
 ```bash
