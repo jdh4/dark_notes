@@ -144,6 +144,10 @@ $ python -m line_profiler myscript.py.lprof
 
 [https://researchcomputing.princeton.edu/pytorch](https://researchcomputing.princeton.edu/pytorch)
 
+## Monitoring GPU Utilization
+
+See the procedure at the bottom of [this page](https://researchcomputing.princeton.edu/tigergpu-utilization).
+
 ## DDT and MAP
 
 We have the DDT parallel debugger which can be used for CUDA kernels. MAP is a general purpose profiler which can provide info on CUDA kernels and MPI calls.
