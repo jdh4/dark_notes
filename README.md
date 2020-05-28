@@ -1,6 +1,6 @@
 # Dark Matter Notes
 
-## Creating the Environment
+## Creating the Conda Environment
 
 ```bash
 $ ssh <YourNetID>@tigergpu.princeton.edu
