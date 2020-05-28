@@ -35,13 +35,13 @@ To submit the job:
 $ sbatch job.slurm
 ```
 
-Monitor the statu of the job (queued, running, finished) with:
+Monitor the state of the job (queued, running, finished) with:
 
 ```
 $ squeue -u $USER
 ```
 
-Consider adding this alias to your .bashrc file:
+Consider adding this alias to your `.bashrc` file:
 
 ```
 alias sq='squeue -u $USER'
