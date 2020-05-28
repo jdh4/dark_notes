@@ -22,10 +22,11 @@ Create a Slurm scipt such as this (job.slurm):
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:00:30          # total run time limit (HH:MM:SS)
 
+module purge
 module load anaconda3/2020.2
 conda activate dark-env
 
-python svd_torch.py
+python myscript.py
 ```
 
 To submit the job:
@@ -47,3 +48,26 @@ Or equivalently:
 ```
 $ salloc --nodes=1 --ntasks=4 --time 30:00 --mem=8G --gres=gpu:1
 ```
+
+## Nsight Systems
+
+```
+#!/bin/bash
+#SBATCH --job-name=dark          # create a short name for your job
+#SBATCH --nodes=1                # node count
+#SBATCH --ntasks=1               # total number of tasks across all nodes
+#SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --mem-per-cpu=4G         # memory per cpu-core
+#SBATCH --gres=gpu:1             # number of gpus per node
+#SBATCH --time=00:00:30          # total run time limit (HH:MM:SS)
+
+module purge
+module load anaconda3/2020.2
+conda activate dark-env
+
+nsys profile -f true --stats=true myscript.py
+```
+
+## Tips of Using PyTorch at Princeton
+
+[https://researchcomputing.princeton.edu/pytorch](https://researchcomputing.princeton.edu/pytorch)
