@@ -49,7 +49,7 @@ Consider adding this alias to your `.bashrc` file:
 alias sq='squeue -u $USER'
 ```
 
-## Interactive allocations
+## Interactive Allocations
 
 For a 30-minutes interactive allocation with 4 CPU-cores, 8 GB of CPU memory and 1 GPU:
 
