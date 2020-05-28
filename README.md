@@ -176,7 +176,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     14         1        161.0    161.0    100.0    return np.cos(np.sin(x))
 ```
 
-## Tips on Using PyTorch at Princeton
+## PyTorch at Princeton
 
 [https://researchcomputing.princeton.edu/pytorch](https://researchcomputing.princeton.edu/pytorch)
 
