@@ -68,6 +68,8 @@ conda activate dark-env
 nsys profile -f true --stats=true myscript.py
 ```
 
+You can either download the profiling file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use nsight-sys on that machine.
+
 ## Tips of Using PyTorch at Princeton
 
 [https://researchcomputing.princeton.edu/pytorch](https://researchcomputing.princeton.edu/pytorch)
