@@ -10,6 +10,16 @@ $ wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env.sh
 $ bash dark_env.sh | tee build.log
 ```
 
+You can then do:
+
+```
+$ module load anaconda3/2020.2
+$ conda activate dark-env
+$ python -c "import torch; print(torch.__version__)"
+1.5.0
+```
+
+
 ## Submitting a Job
 
 Create a Slurm scipt such as this (job.slurm):
