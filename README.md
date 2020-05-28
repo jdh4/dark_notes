@@ -6,7 +6,7 @@
 $ ssh <YourNetID>@tigergpu.princeton.edu
 $ mkdir -p software/dark  # or another location
 $ cd software/dark
-$ cp /scratch/gpfs/jdh4/dark_env.sh .
+$ wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env.sh
 $ bash dark_env.sh | tee build.log
 ```
 
