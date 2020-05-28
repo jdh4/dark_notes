@@ -10,7 +10,7 @@ $ bash dark_env.sh | tee build.log
 
 ## Submitting a Job
 
-Create a Slurm scipt such as this:
+Create a Slurm scipt such as this (job.slurm):
 
 ```
 #!/bin/bash
@@ -26,4 +26,24 @@ module load anaconda3/2020.2
 conda activate dark-env
 
 python svd_torch.py
+```
+
+To submit the job:
+
+```
+sbatch job.slurm
+```
+
+## Interactive allocations
+
+For a 30-minutes interactive allocation with 4 CPU-cores, 8 GB of CPU memory and 1 GPU:
+
+```
+$ salloc -N 1 -n 4 -t 30 --mem=8G --gres=gpu:1 
+```
+
+Or equivalently:
+
+```
+$ salloc --nodes=1 --ntasks=4 --time 30:00 --mem=8G --gres=gpu:1
 ```
