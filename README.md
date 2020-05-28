@@ -97,7 +97,7 @@ nv-nsight-cu-cli  # or nv-nsight-cu for GUI
 
 The [line_prof](https://github.com/rkern/line_profiler) tool provides profiling info for each line of a function.
 
-First add the `@profile` decorators to the function(s) in the Python script (myscript.py):
+First add the `@profile` decorator to the function(s) in the Python script (myscript.py):
 
 ```python
 import numpy as np
