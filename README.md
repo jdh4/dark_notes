@@ -190,4 +190,4 @@ See the procedure at the bottom of [this page](https://researchcomputing.princet
 
 ## DDT and MAP
 
-We have the DDT parallel debugger which can be used for CUDA kernels. MAP is a general purpose profiler which can provide info on CUDA kernels and MPI calls.
+We have the DDT parallel debugger which can be used for CUDA kernels. MAP is a general purpose profiler which can provide info on CUDA kernels and MPI.
