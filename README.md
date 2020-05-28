@@ -106,7 +106,7 @@ def minimum_distance():
 def mygeo():
   return np.cos(np.sin(x))
 
-N = 1_0000
+N = 3000
 x = np.random.randn(N)
 
 y = mygeo()
@@ -138,6 +138,33 @@ Examine the results:
 # module load anaconda3/2020.2
 # conda activate dark-env
 $ python -m line_profiler myscript.py.lprof
+
+Timer unit: 1e-06 s
+
+Total time: 6.60265 s
+File: myscript.py
+Function: minimum_distance at line 3
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     3                                           @profile
+     4                                           def minimum_distance():
+     5         1          1.0      1.0      0.0    dist_min = 1e300
+     6      3000       1002.0      0.3      0.0    for i in range(N - 1):
+     7   4501499    1478080.0      0.3     22.4      for j in range(i + 1, N):
+     8   4498500    3565623.0      0.8     54.0        dist = abs(x[i] - x[j])
+     9   4498500    1557944.0      0.3     23.6        if (dist < dist_min): dist_min = dist
+    10         1          1.0      1.0      0.0    return dist_min
+
+Total time: 0.000161 s
+File: myscript.py
+Function: mygeo at line 12
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    12                                           @profile
+    13                                           def mygeo():
+    14         1        161.0    161.0    100.0    return np.cos(np.sin(x))
 ```
 
 ## Tips on Using PyTorch at Princeton
