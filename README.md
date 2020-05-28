@@ -77,7 +77,7 @@ module purge
 module load anaconda3/2020.2
 conda activate dark-env
 
-nsys profile -f true --stats=true myscript.py
+nsys profile -f true --stats=true python myscript.py
 ```
 
 You can either download the profiling file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use nsight-sys on that machine.
@@ -85,3 +85,7 @@ You can either download the profiling file to your local machine to use `nsight-
 ## Tips on Using PyTorch at Princeton
 
 [https://researchcomputing.princeton.edu/pytorch](https://researchcomputing.princeton.edu/pytorch)
+
+## DDT and MAP
+
+We have the DDT parallel debugger which can be used for CUDA kernels. MAP is a general purpose profiler which can provide info on CUDA kernels and MPI calls.
