@@ -82,13 +82,13 @@ conda activate dark-env
 nsys profile -f true --stats=true python myscript.py
 ```
 
-You can either download the profiling file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use nsight-sys on that machine.
+You can either download the `qdrep` file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use `nsight-sys` on that machine.
 
 ## line_prof for Profiling
 
 The [line_prof](https://github.com/rkern/line_profiler) tool provides profiling info for each line of a function.
 
-First add decorators to the function(s) in the Python script (myscript.py):
+First add the `@profile` decorators to the function(s) in the Python script (myscript.py):
 
 ```python
 import numpy as np
@@ -137,7 +137,7 @@ Examine the results:
 ```
 # module load anaconda3/2020.2
 # conda activate dark-env
-python -m line_profiler myscript.py.lprof
+$ python -m line_profiler myscript.py.lprof
 ```
 
 ## Tips on Using PyTorch at Princeton
