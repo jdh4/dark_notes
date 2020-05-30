@@ -3,7 +3,7 @@
 ## Creating the Conda Environment
 
 ```bash
-$ ssh <YourNetID>@tigergpu.princeton.edu
+$ ssh <YourNetID>@tigergpu.princeton.edu  # or adroit
 $ mkdir -p software/dark  # or another location
 $ cd software/dark
 $ wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env.sh
