@@ -232,3 +232,9 @@ From there you can run `nvidia-smi` or `gpustat`.
 ## DDT and MAP
 
 We have the DDT parallel debugger which can be used for CUDA kernels. MAP is a general purpose profiler which can provide info on CUDA kernels and MPI.
+
+## Convert a Jupyter Notebook to a Python Script
+
+```
+$ jupyter nbconvert --to script run_graph_net_nv.ipynb
+```
