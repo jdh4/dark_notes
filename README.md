@@ -20,6 +20,28 @@ $ python -c "import torch; print(torch.__version__)"
 $ python Pylians3/Tests/import_libraries.py  # no output means success
 ```
 
+The following warning can be ignored:
+
+```
+--------------------------------------------------------------------------
+WARNING: There are more than one active ports on host 'tigergpu', but the
+default subnet GID prefix was detected on more than one of these
+ports.  If these ports are connected to different physical IB
+networks, this configuration will fail in Open MPI.  This version of
+Open MPI requires that every physically separate IB subnet that is
+used between connected MPI processes must have different subnet ID
+values.
+
+Please see this FAQ entry for more details:
+
+  http://www.open-mpi.org/faq/?category=openfabrics#ofa-default-subnet-gid
+
+NOTE: You can turn off this warning by setting the MCA parameter
+      btl_openib_warn_default_gid_prefix to 0.
+--------------------------------------------------------------------------
+```
+
+
 
 ## Submitting a Job
 
