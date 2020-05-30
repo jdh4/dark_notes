@@ -19,7 +19,6 @@ module load openmpi/gcc/3.1.5/64
 export MPICC=$(which mpicc)
 pip install mpi4py
 
-mkdir -p software && cd software
-git clone https://github.com/franciscovillaescusa/Pylians3.git Pylians3_dark
-cd Pylians3_dark/library
+git clone https://github.com/franciscovillaescusa/Pylians3.git
+cd Pylians3/library
 python setup.py install
