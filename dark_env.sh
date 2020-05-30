@@ -2,7 +2,7 @@
 module purge
 module load anaconda3/2020.2
 conda create --name dark-env --channel conda-forge --channel pytorch pytorch torchvision \
-cudatoolkit=10.2 matplotlib cython h5py pyfftw  -y
+cudatoolkit=10.2 matplotlib cython h5py pyfftw -y
 conda activate dark-env
 
 module load rh/devtoolset/8 cudatoolkit/10.2 
