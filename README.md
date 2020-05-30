@@ -241,4 +241,5 @@ $ jupyter nbconvert --to script run_graph_net_nv.ipynb
 
 ## Links
 
+[https://github.com/anonml2020/gn](https://github.com/anonml2020/gn)
 [https://github.com/franciscovillaescusa/Pylians3](https://github.com/franciscovillaescusa/Pylians3)
