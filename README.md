@@ -239,6 +239,12 @@ We have the DDT parallel debugger which can be used for CUDA kernels. MAP is a g
 $ jupyter nbconvert --to script run_graph_net_nv.ipynb
 ```
 
+## Use a Command-Line Python Debugger with Syntax Highlighting
+
+```
+$ ipython -m ipdb run_graph_net_nv.py
+```
+
 ## Links
 
 [https://github.com/anonml2020/gn](https://github.com/anonml2020/gn)   
