@@ -10,3 +10,6 @@ pip install torch-cluster==latest+${CUDA} -f https://pytorch-geometric.com/whl/t
 pip install torch-spline-conv==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.5.0.html
 pip install torch-geometric
 pip install line-profiler
+wget https://github.com/franciscovillaescusa/Pylians3.git
+cd Pylians3/library
+python setup.py install
