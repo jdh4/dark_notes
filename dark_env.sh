@@ -6,11 +6,15 @@ cudatoolkit=10.1 pytables matplotlib cython h5py pyfftw notebook -y
 conda activate dark-env
 
 module load rh/devtoolset/8 cudatoolkit/10.1
-CUDA=cu101
-pip install torch-scatter==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-pip install torch-sparse==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-pip install torch-cluster==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-pip install torch-spline-conv==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip install https://pytorch-geometric.com/whl/torch-1.4.0/torch_sparse-latest%2Bcu101-cp37-cp37m-linux_x86_64.whl
+pip install https://pytorch-geometric.com/whl/torch-1.4.0/torch_scatter-latest%2Bcu101-cp37-cp37m-linux_x86_64.whl
+pip install https://pytorch-geometric.com/whl/torch-1.4.0/torch_cluster-latest%2Bcu101-cp37-cp37m-linux_x86_64.whl
+pip install https://pytorch-geometric.com/whl/torch-1.4.0/torch_spline_conv-latest%2Bcu101-cp37-cp37m-linux_x86_64.whl
+#CUDA=cu101
+#pip install torch-scatter==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+#pip install torch-sparse==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+#pip install torch-cluster==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+#pip install torch-spline-conv==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.4.0.html
 wget https://github.com/rusty1s/pytorch_geometric/archive/1.4.3.tar.gz
 pip install 1.4.3.tar.gz
 
