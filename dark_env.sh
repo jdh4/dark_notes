@@ -11,7 +11,8 @@ pip install torch-scatter==latest+${CUDA} -f https://pytorch-geometric.com/whl/t
 pip install torch-sparse==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.4.0.html
 pip install torch-cluster==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.4.0.html
 pip install torch-spline-conv==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-pip install torch-geometric
+wget https://github.com/rusty1s/pytorch_geometric/archive/1.4.3.tar.gz
+pip install 1.4.3.tar.gz
 
 pip install line-profiler
 pip install ipdb
