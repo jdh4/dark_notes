@@ -57,6 +57,8 @@ Create a Slurm scipt such as this (job.slurm):
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:00:30          # total run time limit (HH:MM:SS)
 
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
 module purge
 module load anaconda3/2020.2
 conda activate dark-env
@@ -109,6 +111,8 @@ Nsight Systems [getting started guide](https://docs.nvidia.com/nsight-systems/) 
 #SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G per cpu-core is default)
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:00:30          # total run time limit (HH:MM:SS)
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 module purge
 module load anaconda3/2020.2
@@ -168,6 +172,8 @@ Submit the job (sbatch job.slurm):
 #SBATCH --mem-per-cpu=4G         # memory per cpu-core
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:00:30          # total run time limit (HH:MM:SS)
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 module purge
 module load anaconda3/2020.2
