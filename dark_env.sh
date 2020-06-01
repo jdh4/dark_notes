@@ -1,7 +1,7 @@
 #!/bin/bash
 module purge
 module load anaconda3/2020.2
-conda create --name dark-env --channel conda-forge --channel pytorch pytorch=1.4 torchvision \
+conda create --name dark-env --channel conda-forge --channel pytorch python=3.7 pytorch=1.4 torchvision \
 cudatoolkit=10.1 pytables matplotlib cython h5py pyfftw notebook -y
 conda activate dark-env
 
