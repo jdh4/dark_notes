@@ -112,6 +112,8 @@ $ mkdir myjob && cd myjob
 $ sbatch job.slurm
 ```
 
+Below is an example Slurm script:
+
 ```
 #!/bin/bash
 #SBATCH --job-name=dark          # create a short name for your job
@@ -131,7 +133,7 @@ conda activate dark-env
 nsys profile -f true --stats=true python myscript.py
 ```
 
-You can either download the `qdrep` file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use `nsight-sys` on that machine.
+You can either download the `.qdrep` file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use `nsight-sys` on that machine.
 
 ## Nsight Compute for Detailed GPU Kernel Profiling
 
