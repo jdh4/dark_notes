@@ -53,9 +53,9 @@ Create a Slurm scipt such as this (job.slurm):
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G per cpu-core is default)
+#SBATCH --mem=30G                # total memory per node
 #SBATCH --gres=gpu:1             # number of gpus per node
-#SBATCH --time=00:00:30          # total run time limit (HH:MM:SS)
+#SBATCH --time=00:10:00          # total run time limit (HH:MM:SS)
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
@@ -120,9 +120,9 @@ Below is an example Slurm script:
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G per cpu-core is default)
+#SBATCH --mem=30G                # total memory per node
 #SBATCH --gres=gpu:1             # number of gpus per node
-#SBATCH --time=00:00:30          # total run time limit (HH:MM:SS)
+#SBATCH --time=00:10:00          # total run time limit (HH:MM:SS)
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
@@ -159,7 +159,7 @@ Below is a sample slurm script:
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem-per-cpu=30G        # memory per cpu-core (4G per cpu-core is default)
+#SBATCH --mem=30G                # total memory per node
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:10:00          # total run time limit (HH:MM:SS)
 
@@ -217,9 +217,9 @@ Submit the job (sbatch job.slurm):
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem-per-cpu=4G         # memory per cpu-core
+#SBATCH --mem=30G                # total memory per node
 #SBATCH --gres=gpu:1             # number of gpus per node
-#SBATCH --time=00:00:30          # total run time limit (HH:MM:SS)
+#SBATCH --time=00:10:00          # total run time limit (HH:MM:SS)
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
