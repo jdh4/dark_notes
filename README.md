@@ -169,7 +169,7 @@ module purge
 module load anaconda3/2020.2
 conda activate dark-env
 
-/usr/local/cuda-10.2/bin/nv-nsight-cu-cli -o profile python -u _run_graph_net_nv.py
+/usr/local/cuda-10.2/bin/nv-nsight-cu-cli -f -o my_report_${SLURM_JOBID} python -u _run_graph_net_nv.py
 ```
 
 One can then use `nv-nsight-cu` to view the results:
@@ -177,7 +177,7 @@ One can then use `nv-nsight-cu` to view the results:
 ```
 # ssh -X tigergpu
 $ module load cudatoolkit/10.2
-$ nv-nsight-cu <file>
+$ nv-nsight-cu my_report_xxxxxx.nsight-cuprof-report
 ```
 
 ## line_prof for Profiling
