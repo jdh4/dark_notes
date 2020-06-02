@@ -133,7 +133,14 @@ conda activate dark-env
 nsys profile -f true --stats=true python myscript.py
 ```
 
-You can either download the `.qdrep` file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use `nsight-sys` on that machine.
+You can either download the `.qdrep` file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use `nsight-sys` on that machine. The latter approach would look like this:
+
+```
+# in a new terminal
+$ ssh -X <YourNetID>@tigressdata.princeton.edu
+$ cd /tiger/scratch/gpfs/<YourNetID>
+$ nsight-sys report1.sqlite
+```
 
 ## Nsight Compute for Detailed GPU Kernel Profiling
 
