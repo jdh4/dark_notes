@@ -102,6 +102,16 @@ $ salloc --nodes=1 --ntasks=4 --time 30:00 --mem=8G --gres=gpu:1
 
 Nsight Systems [getting started guide](https://docs.nvidia.com/nsight-systems/) and notes on [Summit](https://docs.olcf.ornl.gov/systems/summit_user_guide.html#profiling-gpu-code-with-nvidia-developer-tools).
 
+IMPORTANT: Do not run profiling jobs in the /home directory because it has a 20 GB quota. Instead launch jobs from `/scratch/gpfs` where you have 500 GB. Here's an example:
+
+```
+$ ssh <YourNetID>@tigergpu.princeton.edu
+$ cd /scratch/gpfs/<YourNetID>
+$ mkdir myjob && cd myjob
+# prepare Slurm script
+$ sbatch job.slurm
+```
+
 ```
 #!/bin/bash
 #SBATCH --job-name=dark          # create a short name for your job
