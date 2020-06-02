@@ -142,9 +142,9 @@ $ cd /tiger/scratch/gpfs/<YourNetID>
 $ nsight-sys report1.sqlite
 ```
 
-## Nsight Compute for Detailed GPU Kernel Profiling
+## Nsight Compute for GPU Kernel Profiling (Adroit or Traverse but not TigerGPU)
 
-See the NVIDIA [documentation](https://docs.nvidia.com/nsight-compute/). This tool is available via the CUDA Toolkit on all of our clusters:
+See the NVIDIA [documentation](https://docs.nvidia.com/nsight-compute/). This tool does not support the P100 GPUs of TigerGPU.
 
 ```
 module load cudatoolkit/10.2
@@ -175,7 +175,7 @@ conda activate dark-env
 One can then use `nv-nsight-cu` to view the results:
 
 ```
-# ssh -X tigergpu
+# ssh -X adroit
 $ module load cudatoolkit/10.2
 $ nv-nsight-cu my_report_xxxxxx.nsight-cuprof-report
 ```
