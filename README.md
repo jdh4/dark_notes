@@ -165,6 +165,14 @@ $ cd /tiger/scratch/gpfs/<YourNetID>
 $ nsight-sys report1.sqlite
 ```
 
+## Large Cache
+
+Nsight Systems will cache lots of data. If you encouter file quota problems then you may need to clear this directory:
+
+```
+~/.nsightsystems
+```
+
 ## Nsight Compute for GPU Kernel Profiling (Adroit or Traverse but not TigerGPU)
 
 See the NVIDIA [documentation](https://docs.nvidia.com/nsight-compute/). This tool does not support the P100 GPUs of TigerGPU.
