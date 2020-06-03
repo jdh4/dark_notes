@@ -96,6 +96,7 @@ Create a Slurm scipt such as this (job.slurm):
 #SBATCH --mem=30G                # total memory per node
 #SBATCH --gres=gpu:tesla_v100:1  # number of gpus per node
 #SBATCH --time=00:02:00          # total run time limit (HH:MM:SS)
+#SBATCH --reservation=hackathon  # REMOVE THIS AFTER THE HACKATHON
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
