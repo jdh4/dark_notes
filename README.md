@@ -43,7 +43,7 @@ NOTE: You can turn off this warning by setting the MCA parameter
 
 
 
-## Submitting a Job
+## Submitting a Job to TigerGPU
 
 Create a Slurm scipt such as this (job.slurm):
 
@@ -82,6 +82,28 @@ Consider adding this alias to your `.bashrc` file:
 
 ```
 alias sq='squeue -u $USER'
+```
+## Submitting a Job to Adroit
+
+Create a Slurm scipt such as this (job.slurm):
+
+```
+#!/bin/bash
+#SBATCH --job-name=dark          # create a short name for your job
+#SBATCH --nodes=1                # node count
+#SBATCH --ntasks=1               # total number of tasks across all nodes
+#SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --mem=30G                # total memory per node
+#SBATCH --gres=gpu:tesla_v100:1  # number of gpus per node
+#SBATCH --time=00:02:00          # total run time limit (HH:MM:SS)
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+module purge
+module load anaconda3/2020.2
+conda activate dark-env
+
+python myscript.py
 ```
 
 ## Interactive Allocations
