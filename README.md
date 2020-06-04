@@ -161,7 +161,7 @@ You can either download the `.qdrep` file to your local machine to use `nsight-s
 ```
 # in a new terminal
 $ ssh -X <YourNetID>@tigressdata.princeton.edu
-$ cd /tiger/scratch/gpfs/<YourNetID>
+$ cd /tiger/scratch/gpfs/<YourNetID>/myjob
 $ nsight-sys report1.sqlite
 ```
 
