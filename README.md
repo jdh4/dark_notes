@@ -63,7 +63,7 @@ module purge
 module load anaconda3/2020.2
 conda activate dark-env
 
-python myscript.py
+python _run_graph_net_nv.py
 ```
 
 To submit the job:
@@ -104,7 +104,7 @@ module purge
 module load anaconda3/2020.2
 conda activate dark-env
 
-python myscript.py
+python _run_graph_net_nv.py
 ```
 
 ## Interactive Allocations
@@ -153,7 +153,7 @@ module purge
 module load anaconda3/2020.2
 conda activate dark-env
 
-nsys profile -f true --stats=true python myscript.py
+nsys profile -f true --stats=true python _run_graph_net_nv.py
 ```
 
 You can either download the `.qdrep` file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use `nsight-sys` on that machine. The latter approach would look like this:
@@ -200,7 +200,7 @@ module purge
 module load anaconda3/2020.2
 conda activate dark-env
 
-/usr/local/cuda-10.2/bin/nv-nsight-cu-cli -f -o my_report_${SLURM_JOBID} python -u _run_graph_net_nv.py
+/usr/local/cuda-10.2/bin/nv-nsight-cu-cli -f -o my_report_${SLURM_JOBID} python _run_graph_net_nv.py
 ```
 
 One can then use `nv-nsight-cu` to view the results:
@@ -258,7 +258,7 @@ module purge
 module load anaconda3/2020.2
 conda activate dark-env
 
-kernprof -l myscript.py
+kernprof -l _run_graph_net_nv.py
 ```
 
 Examine the results:
@@ -266,12 +266,12 @@ Examine the results:
 ```
 # module load anaconda3/2020.2
 # conda activate dark-env
-$ python -m line_profiler myscript.py.lprof
+$ python -m line_profiler _run_graph_net_nv.py.lprof
 
 Timer unit: 1e-06 s
 
 Total time: 6.60265 s
-File: myscript.py
+File: _run_graph_net_nv.py
 Function: minimum_distance at line 3
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
@@ -327,7 +327,7 @@ $ jupyter nbconvert --to script run_graph_net_nv.ipynb
 ## Use a Command-Line Python Debugger with Syntax Highlighting
 
 ```
-$ ipython -m ipdb run_graph_net_nv.py
+$ ipython -m ipdb _run_graph_net_nv.py
 ```
 
 ## Links
