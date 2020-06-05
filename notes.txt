@@ -11,3 +11,5 @@ batch_per_epoch=150
 In quijote_gn_nv.py:
 batch=32
 ```
+
+First run time on Tiger is 4:45 and second run was 2:07
