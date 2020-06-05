@@ -1,0 +1,2 @@
+Ran code on adroit v100 at 1:30 pm on Friday (6/5). On first run it took 4:19. On second run (where input file is now available)
+it required 1:48. On 3rd run it required 1:46.
