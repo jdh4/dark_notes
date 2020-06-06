@@ -21,3 +21,41 @@ GEMMs in fully connected layers:
 Batch size, input features, output features should be multiples of 8
 GEMMs in RNNs:
 Batch size, hidden size, embedding size, and dictionary size should be multiples of 8
+
+```
+>>> import h5py
+>>> f = h5py.File('halos_0.h5', 'r')
+>>> list(f.keys())
+['df']
+>>> f['df']
+<HDF5 group "/df" (4 members)>
+>>> f['df'].keys()
+<KeysViewHDF5 ['axis0', 'axis1', 'block0_items', 'block0_values']>
+>>> f['df']['axis0']
+<HDF5 dataset "axis0": shape (8,), type "|S5">
+>>> f['df']['axis1']
+<HDF5 dataset "axis1": shape (2946947,), type "<i8">
+>>> f['df']['block0_items']
+<HDF5 dataset "block0_items": shape (8,), type "|S5">
+>>> f['df']['block0_values']
+<HDF5 dataset "block0_values": shape (2946947, 8), type "<f4">
+>>> ds = f['df']['axis0']
+>>> ds
+<HDF5 dataset "axis0": shape (8,), type "|S5">
+>>> ds[::]
+array([b'x', b'y', b'z', b'vx', b'vy', b'vz', b'M14', b'delta'],
+      dtype='|S5')
+>>> ds = f['df']['axis1']
+>>> ds.shape
+(2946947,)
+>>> ds[0]
+0
+>>> ds[1]
+1
+>>> ds = f['df']['block0_values']
+>>> ds.shape
+(2946947, 8)
+>>> ds[0]
+array([184.12346  , 779.9073   , 774.8043   ,  69.008804 , 169.7808   ,
+       272.0725   ,  53.817314 ,   3.5218508], dtype=float32)
+```
