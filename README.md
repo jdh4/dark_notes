@@ -56,6 +56,8 @@ $ export TORCH_CUDA_ARCH_LIST="7.0"
 $ pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 ```
 
+The speed-up comes from using the Tensor Cores which can perform matrix multiplies of 4x4 matrices in half-precision. However, the dimension of each matrix must be a multiple of 8. Read about the constraints [here](https://docs.nvidia.com/deeplearning/performance/mixed-precision-training/index.html#opt-tensor-cores).
+
 For simple PyTorch codes these are the necessary changes:
 
 ```
