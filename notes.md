@@ -59,3 +59,15 @@ array([b'x', b'y', b'z', b'vx', b'vy', b'vz', b'M14', b'delta'],
 array([184.12346  , 779.9073   , 774.8043   ,  69.008804 , 169.7808   ,
        272.0725   ,  53.817314 ,   3.5218508], dtype=float32)
 ```
+
+load xyz
+get neighbors using a kdtree
+
+```
+ipdb> xyz.shape                                                                                                               
+(2946947, 3)
+ipdb> neighbors.shape
+(2946947,)
+ipdb> all_edges.shape
+(2, 59785178)
+```
