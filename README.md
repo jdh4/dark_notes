@@ -48,6 +48,7 @@ The [Apex](https://github.com/nvidia/apex) library allows for automatic mixed-pr
 ```
 $ ssh <YourNetID>@adroit.princeton.edu  # mixed precision only possible on V100
 $ module load anaconda3/2020.2 rh/devtoolset/8 cudatoolkit/10.1
+$ conda activate dark-env
 $ cd software/dark
 $ git clone https://github.com/NVIDIA/apex
 $ cd apex
