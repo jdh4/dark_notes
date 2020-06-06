@@ -56,6 +56,17 @@ $ export TORCH_CUDA_ARCH_LIST="7.0"
 $ pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 ```
 
+For simple codes these are the necessary changes:
+
+```
+from apex impor amp
+...
+model, optimizer = amp.initialize(model, optimizer, opt_level="O1")
+...
+with amp.scale_loss(loss, optimizer) as scaled_loss:
+    scaled_loss.backward()
+```
+
 ## Submitting a Job to TigerGPU
 
 Create a Slurm scipt such as this (job.slurm):
