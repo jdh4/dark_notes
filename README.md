@@ -56,7 +56,7 @@ $ export TORCH_CUDA_ARCH_LIST="7.0"
 $ pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 ```
 
-For simple codes these are the necessary changes:
+For simple PyTorch codes these are the necessary changes:
 
 ```
 from apex import amp
