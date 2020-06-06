@@ -43,7 +43,7 @@ NOTE: You can turn off this warning by setting the MCA parameter
 
 ## Adding NVIDIA Apex to the Environment (Optional)
 
-The [Apex](https://github.com/nvidia/apex) library allows for automatic mixed-precision training and distributed training:
+The [Apex](https://github.com/nvidia/apex) library allows for [automatic mixed-precision](https://docs.nvidia.com/deeplearning/performance/mixed-precision-training/index.html) training and distributed training:
 
 ```
 $ ssh <YourNetID>@adroit.princeton.edu  # mixed precision only possible on V100
