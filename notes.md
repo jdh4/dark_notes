@@ -71,3 +71,7 @@ ipdb> neighbors.shape
 ipdb> all_edges.shape
 (2, 59785178)
 ```
+
+Standardize
+
+[NeighborSampler](https://pytorch-geometric.readthedocs.io/en/latest/modules/data.html?highlight=neighbor#torch_geometric.data.NeighborSampler)
