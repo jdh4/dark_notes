@@ -41,7 +41,19 @@ NOTE: You can turn off this warning by setting the MCA parameter
 --------------------------------------------------------------------------
 ```
 
+## Adding NVIDIA Apex to the Environment (Optional)
 
+The [Apex](https://github.com/nvidia/apex) library allows for automatic mixed-precision training and distributed training:
+
+```
+$ ssh <YourNetID>@adroit.princeton.edu  # mixed precision only possible on V100
+$ module load anaconda3/2020.2 rh/devtoolset/8 cudatoolkit/10.1
+$ cd software/dark
+$ git clone https://github.com/NVIDIA/apex
+$ cd apex
+$ export TORCH_CUDA_ARCH_LIST="7.0"
+$ pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+```
 
 ## Submitting a Job to TigerGPU
 
