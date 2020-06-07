@@ -94,3 +94,30 @@ ipdb> bin_count.mean()
 ipdb> bin_count.std()              
 21.29062588527445
 ```
+
+```
+ipdb> type(ogn)                 
+<class 'quijote_gn_nv.GN'>
+
+ipdb> print(ogn)                 
+GN(
+  (msg_fnc): Sequential(
+    (0): Linear(in_features=11, out_features=500, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=500, out_features=500, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=500, out_features=500, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=500, out_features=100, bias=True)
+  )
+  (node_fnc): Sequential(
+    (0): Linear(in_features=104, out_features=500, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=500, out_features=500, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=500, out_features=500, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=500, out_features=1, bias=True)
+  )
+)
+```
