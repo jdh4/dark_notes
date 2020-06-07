@@ -161,3 +161,5 @@ GN(
   )
 )
 ```
+
+GN derives from torch_geometric.nn.MessagePassing
