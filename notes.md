@@ -78,5 +78,19 @@ Standardize
 
 ```
 ipdb> p graph_data
-{'graph': Data(edge_index=[2, 59785178], x=[2946947, 7], y=[2946947, 2]), 'trainloader': <torch_geometric.data.sampler.NeighborSampler object at 0x2b9834bb5f90>, 'column_description': 'x columns are [x, y, z, vx, vy, vz, M]; everything has been scaled to be std=1. y columns are [bias, mask], where mask=1 indicates that the node should be used as a receiver for training; mask=0 indicates that the node is too close to the edge. Multiply the node-wise loss by the mask during training.', 'pos_scale': tensor(288.6028), 'vel_scale': tensor(315.9276), 'M14_scale': tensor(0.3377)}
+{'graph': Data(edge_index=[2, 59785178], x=[2946947, 7], y=[2946947, 2]),
+'trainloader': <torch_geometric.data.sampler.NeighborSampler object at 0x2b9834bb5f90>,
+'column_description': 'x columns are [x, y, z, vx, vy, vz, M]; everything has been
+scaled to be std=1. y columns are [bias, mask], where mask=1 indicates that the node should
+be used as a receiver for training; mask=0 indicates that the node is too close to the edge.
+Multiply the node-wise loss by the mask during training.', 'pos_scale': tensor(288.6028),
+'vel_scale': tensor(315.9276), 'M14_scale': tensor(0.3377)}
+```
+
+```
+ipdb> bin_count=np.bincount(graph_data['graph'].edge_index.flatten())
+ipdb> bin_count.mean()           
+40.57431504536729
+ipdb> bin_count.std()              
+21.29062588527445
 ```
