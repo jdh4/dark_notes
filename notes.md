@@ -191,3 +191,61 @@ GN(
 ```
 
 GN derives from torch_geometric.nn.MessagePassing
+
+P100 (Monday morning, with file generated from scratch):
+
+```
+Total time: 141.284 s
+File: /scratch/gpfs/jdh4/gn/generate_halo_data_nv.py
+Function: generate_data at line 15
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+@profile
+    16                                           def generate_data(realization,cluster):
+    ...
+55                                           # compute density field of the snapshot (density constrast d = rho/<rho>-1)
+    56         1   65608548.0 65608548.0     46.4      delta = MASL.density_field_gadget(snapshot, ptypes, grid, MAS, do_RSD, axis)
+    57         1    1796157.0 1796157.0      1.3      delta /= np.mean(delta, dtype=np.float64);  delta -= 1.0
+    58                                           
+    59                                           # # Smooth density field:
+    60                                           
+    61                                           # smooth the field on a given scale
+    62         1   25427061.0 25427061.0     18.0      W_k = SL.FT_filter(BoxSize, R, grid, Filter, threads)
+    63         1   47363841.0 47363841.0     33.5      delta_smoothed = SL.field_smoothing(delta, W_k, threads)
+```
+
+```
+Total time: 240.662 s
+File: /scratch/gpfs/jdh4/gn/quijote_gn_nv.py
+Function: load_graph_data at line 32
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    32                                           @profile
+    33                                           def load_graph_data(realization=0, cutoff=30):
+    34         1          2.0      2.0      0.0      try:
+    35         1         94.0     94.0      0.0          cur_data = pd.read_hdf('halos_%d.h5'%(realization,))
+    36         1          2.0      2.0      0.0      except:
+    37         1      70458.0  70458.0      0.0          from generate_halo_data_nv import generate_data
+    38         1  141707954.0 141707954.0     58.9          generate_data(realization, get_cluster())
+    39         1     143492.0 143492.0      0.1          cur_data = pd.read_hdf('halos_%d.h5'%(realization,))
+    40                                           
+    41                                           # # Now, let's connect nearby halos:
+    42                                           
+    43         1    1963591.0 1963591.0      0.8      xyz = np.array([cur_data.x, cur_data.y, cur_data.z]).T
+    44         1    2849210.0 2849210.0      1.2      tree = KDTree(xyz)
+    45                                           
+    46                                           # ## Let's see what a good radius is. Let's aim for ~8 particles or so for average
+    47                                           
+    48         1          3.0      3.0      0.0      region_of_influence = cutoff
+    49                                           
+    50                                               #plt.hist(tree.query_radius(xyz, region_of_influence, count_only=True)-1, bins=31);
+    51                                               #plt.xlabel('Number with')
+    52                                               #plt.ylabel('Number of neighbors')
+    53                                           
+    54                                           # ## So, let's create the adjacency matrix:
+    55                                           
+    56         1   43497352.0 43497352.0     18.1      neighbors = tree.query_radius(xyz, region_of_influence, sort_results=True, return_distance=True)[0]
+    ...
+```
