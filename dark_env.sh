@@ -2,7 +2,7 @@
 module purge
 module load anaconda3/2020.2
 conda create --name dark-env-v2 --channel conda-forge --channel pytorch python=3.7 pytorch=1.5 torchvision \
-cudatoolkit=10.1 pytables matplotlib cython h5py pyfftw notebook tqdm -y
+cudatoolkit=10.1 pytables matplotlib cython h5py pyfftw notebook tqdm cupy -y
 conda activate dark-env-v2
 
 module load rh/devtoolset/8
