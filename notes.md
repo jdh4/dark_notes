@@ -195,27 +195,6 @@ GN derives from torch_geometric.nn.MessagePassing
 P100 (Monday morning, with file generated from scratch):
 
 ```
-Total time: 141.284 s
-File: /scratch/gpfs/jdh4/gn/generate_halo_data_nv.py
-Function: generate_data at line 15
-
-Line #      Hits         Time  Per Hit   % Time  Line Contents
-==============================================================
-@profile
-    16                                           def generate_data(realization,cluster):
-    ...
-55                                           # compute density field of the snapshot (density constrast d = rho/<rho>-1)
-    56         1   65608548.0 65608548.0     46.4      delta = MASL.density_field_gadget(snapshot, ptypes, grid, MAS, do_RSD, axis)
-    57         1    1796157.0 1796157.0      1.3      delta /= np.mean(delta, dtype=np.float64);  delta -= 1.0
-    58                                           
-    59                                           # # Smooth density field:
-    60                                           
-    61                                           # smooth the field on a given scale
-    62         1   25427061.0 25427061.0     18.0      W_k = SL.FT_filter(BoxSize, R, grid, Filter, threads)
-    63         1   47363841.0 47363841.0     33.5      delta_smoothed = SL.field_smoothing(delta, W_k, threads)
-```
-
-```
 Total time: 240.662 s
 File: /scratch/gpfs/jdh4/gn/quijote_gn_nv.py
 Function: load_graph_data at line 32
@@ -248,4 +227,25 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     55                                           
     56         1   43497352.0 43497352.0     18.1      neighbors = tree.query_radius(xyz, region_of_influence, sort_results=True, return_distance=True)[0]
     ...
+```
+
+```
+Total time: 141.284 s
+File: /scratch/gpfs/jdh4/gn/generate_halo_data_nv.py
+Function: generate_data at line 15
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+@profile
+    16                                           def generate_data(realization,cluster):
+    ...
+55                                           # compute density field of the snapshot (density constrast d = rho/<rho>-1)
+    56         1   65608548.0 65608548.0     46.4      delta = MASL.density_field_gadget(snapshot, ptypes, grid, MAS, do_RSD, axis)
+    57         1    1796157.0 1796157.0      1.3      delta /= np.mean(delta, dtype=np.float64);  delta -= 1.0
+    58                                           
+    59                                           # # Smooth density field:
+    60                                           
+    61                                           # smooth the field on a given scale
+    62         1   25427061.0 25427061.0     18.0      W_k = SL.FT_filter(BoxSize, R, grid, Filter, threads)
+    63         1   47363841.0 47363841.0     33.5      delta_smoothed = SL.field_smoothing(delta, W_k, threads)
 ```
