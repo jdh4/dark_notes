@@ -17,7 +17,7 @@ You can then do:
 ```
 $ module load anaconda3/2020.2
 $ conda activate dark-env-v2  # pytorch 1.5
-$ conda activate dark-env     # pytorch 1.4
+# conda activate dark-env     # pytorch 1.4
 $ python -c "import torch; print(torch.__version__)"
 1.5.0
 $ python Pylians3/Tests/import_libraries.py  # no output means success
