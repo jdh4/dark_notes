@@ -6,7 +6,8 @@
 $ ssh <YourNetID>@tigergpu.princeton.edu  # or adroit
 $ mkdir -p software/dark  # or another location
 $ cd software/dark
-$ wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env.sh
+$ wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env_v2.sh  # PyTorch 1.5
+# wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env.sh     # PyTorch 1.4
 $ bash dark_env.sh | tee build.log
 ```
 
@@ -14,9 +15,9 @@ You can then do:
 
 ```
 $ module load anaconda3/2020.2
-$ conda activate dark-env
+$ conda activate dark-env-v2
 $ python -c "import torch; print(torch.__version__)"
-1.4.0
+1.5.0
 $ python Pylians3/Tests/import_libraries.py  # no output means success
 ```
 
