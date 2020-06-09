@@ -49,7 +49,7 @@ The [Apex](https://github.com/nvidia/apex) library allows for [automatic mixed-p
 ```
 $ ssh <YourNetID>@adroit.princeton.edu  # mixed precision only possible on V100
 $ module load anaconda3/2020.2 rh/devtoolset/8 cudatoolkit/10.1
-$ conda activate dark-env
+$ conda activate dark-env-v2
 $ cd software/dark
 $ git clone https://github.com/NVIDIA/apex
 $ cd apex
@@ -88,7 +88,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 module purge
 module load anaconda3/2020.2
-conda activate dark-env
+conda activate dark-env-v2
 
 python _run_graph_net_nv.py
 ```
@@ -129,7 +129,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 module purge
 module load anaconda3/2020.2
-conda activate dark-env
+conda activate dark-env-v2
 
 python _run_graph_net_nv.py
 ```
@@ -139,13 +139,17 @@ python _run_graph_net_nv.py
 For a 30-minutes interactive allocation with 4 CPU-cores, 8 GB of CPU memory and 1 GPU:
 
 ```
-$ salloc -N 1 -n 4 -t 30 --mem=8G --gres=gpu:1 
+$ salloc -N 1 -n 4 -t 30 --mem=8G --gres=gpu:1
+$ module load anaconda3/2020.2
+$ conda activate dark-env-v2
 ```
 
 Or equivalently:
 
 ```
 $ salloc --nodes=1 --ntasks=4 --time 30:00 --mem=8G --gres=gpu:1
+$ module load anaconda3/2020.2
+$ conda activate dark-env-v2
 ```
 
 ## Nsight Systems for Profiling
@@ -178,9 +182,9 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 module purge
 module load anaconda3/2020.2
-conda activate dark-env
+conda activate dark-env-v2
 
-nsys profile -f true --stats=true python _run_graph_net_nv.py
+nsys profile -o profile_${SLURM_JOBID} --stats=false -t cuda,nvtx,osrt,cublas python _run_graph_net_nv.py
 ```
 
 You can either download the `.qdrep` file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use `nsight-sys` on that machine. The latter approach would look like this:
@@ -225,7 +229,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 module purge
 module load anaconda3/2020.2
-conda activate dark-env
+conda activate dark-env-v2
 
 /usr/local/cuda-10.2/bin/nv-nsight-cu-cli -f -o my_report_${SLURM_JOBID} python _run_graph_net_nv.py
 ```
@@ -283,7 +287,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 module purge
 module load anaconda3/2020.2
-conda activate dark-env
+conda activate dark-env-v2
 
 kernprof -l _run_graph_net_nv.py
 ```
@@ -292,7 +296,7 @@ Examine the results:
 
 ```
 # module load anaconda3/2020.2
-# conda activate dark-env
+# conda activate dark-env-v2
 $ python -m line_profiler _run_graph_net_nv.py.lprof
 
 Timer unit: 1e-06 s
