@@ -9,14 +9,15 @@ $ cd software/dark
 $ wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env_v2.sh  # pytorch 1.5
 # wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env.sh     # pytorch 1.4
 $ bash dark_env_v2.sh | tee build.log  # pytorch 1.5
-# bash dark_env.sh | tee build.log  # pytorch 1.4
+# bash dark_env.sh | tee build.log     # pytorch 1.4
 ```
 
 You can then do:
 
 ```
 $ module load anaconda3/2020.2
-$ conda activate dark-env-v2
+$ conda activate dark-env-v2  # pytorch 1.5
+$ conda activate dark-env     # pytorch 1.4
 $ python -c "import torch; print(torch.__version__)"
 1.5.0
 $ python Pylians3/Tests/import_libraries.py  # no output means success
