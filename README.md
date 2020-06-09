@@ -6,9 +6,10 @@
 $ ssh <YourNetID>@tigergpu.princeton.edu  # or adroit
 $ mkdir -p software/dark  # or another location
 $ cd software/dark
-$ wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env_v2.sh  # PyTorch 1.5
-# wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env.sh     # PyTorch 1.4
-$ bash dark_env.sh | tee build.log
+$ wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env_v2.sh  # pytorch 1.5
+# wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env.sh     # pytorch 1.4
+$ bash dark_env_v2.sh | tee build.log  # pytorch 1.5
+# bash dark_env.sh | tee build.log  # pytorch 1.4
 ```
 
 You can then do:
