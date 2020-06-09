@@ -14,7 +14,7 @@ $ bash dark_env_v2.sh | tee build.log  # pytorch 1.5
 
 You can then do:
 
-```
+```bash
 $ module load anaconda3/2020.2
 $ conda activate dark-env-v2  # pytorch 1.5
 # conda activate dark-env     # pytorch 1.4
