@@ -105,6 +105,8 @@ Add the line below to enable [MPS](https://docs.nvidia.com/deploy/pdf/CUDA_Multi
 #SBATCH --gpu-mps
 ```
 
+From B. Crovella on SO: MPS takes work (e.g. CUDA kernel launches) that is issued from separate processes, and runs them on the device as if they emanated from a single process. As if they are running in a single context.
+
 ## Submitting a Job to TigerGPU
 
 Create a Slurm scipt such as this (job.slurm):
