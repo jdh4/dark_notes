@@ -44,7 +44,7 @@ NOTE: You can turn off this warning by setting the MCA parameter
 --------------------------------------------------------------------------
 ```
 
-## Adding NVIDIA Apex to the Environment (Optional and V100 only)
+## Adding NVIDIA Apex to the Environment (V100 only)
 
 The [Apex](https://github.com/nvidia/apex) library allows for [automatic mixed-precision](https://docs.nvidia.com/deeplearning/performance/mixed-precision-training/index.html) (AMP) training and distributed training:
 
