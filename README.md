@@ -6,7 +6,7 @@
 $ ssh <YourNetID>@tigergpu.princeton.edu  # or adroit
 $ mkdir -p software/dark  # or another location
 $ cd software/dark
-$ wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env_v2.sh  # pytorch 1.5
+$ wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env_v2.sh  # pytorch 1.5, cuda 10.2
 # wget https://raw.githubusercontent.com/jdh4/dark_notes/master/dark_env.sh     # pytorch 1.4
 $ bash dark_env_v2.sh | tee build.log  # pytorch 1.5
 # bash dark_env.sh | tee build.log     # pytorch 1.4
@@ -16,7 +16,7 @@ You can then do:
 
 ```bash
 $ module load anaconda3/2020.2
-$ conda activate dark-env-v2  # pytorch 1.5
+$ conda activate dark-env-v2  # pytorch 1.5, cuda 10.2
 # conda activate dark-env     # pytorch 1.4
 $ python -c "import torch; print(torch.__version__)"
 1.5.0
@@ -50,7 +50,7 @@ The [Apex](https://github.com/nvidia/apex) library allows for [automatic mixed-p
 
 ```
 $ ssh <YourNetID>@adroit.princeton.edu  # mixed precision only possible on V100
-$ module load anaconda3/2020.2 rh/devtoolset/8 cudatoolkit/10.1
+$ module load anaconda3/2020.2 rh/devtoolset/8 cudatoolkit/10.2
 $ conda activate dark-env-v2
 $ cd software/dark
 $ git clone https://github.com/NVIDIA/apex
