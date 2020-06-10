@@ -82,6 +82,8 @@ To see the half-precision speed up a code, download the [dcgan example](https://
 
 On the V100 node, for [1] the run time was found to be 6:59 and [2] gave 9:43. One also gets 9:43 if you go through and strip out all amp code instead of trusting the O0 setting. Note that the choice of O3 gave NaNs. O1 is the recommended optimization level by NVIDIA.
 
+To go further one can profile with `nsys` and then use `nsight-sys` to see that the fp16 kernels are being called.
+
 You need to download the data on the head node since compute nodes don't have internet access. This script can be used:
 
 ```
