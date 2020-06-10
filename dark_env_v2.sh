@@ -2,11 +2,11 @@
 module purge
 module load anaconda3/2020.2
 conda create --name dark-env-v2 --channel conda-forge --channel pytorch python=3.7 pytorch=1.5 torchvision \
-cudatoolkit=10.1 pytables matplotlib cython h5py pyfftw notebook tqdm cupy numba -y
+cudatoolkit=10.2 pytables matplotlib cython h5py pyfftw notebook tqdm cupy numba -y
 conda activate dark-env-v2
 
 module load rh/devtoolset/8
-CUDA=cu101
+CUDA=cu102
 pip install torch-scatter==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.5.0.html
 pip install torch-sparse==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-1.5.0.html
 pip install torch-geometric
