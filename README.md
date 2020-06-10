@@ -44,7 +44,7 @@ NOTE: You can turn off this warning by setting the MCA parameter
 --------------------------------------------------------------------------
 ```
 
-## Adding NVIDIA Apex to the Environment (Optional)
+## Adding NVIDIA Apex to the Environment (Optional and V100 only)
 
 The [Apex](https://github.com/nvidia/apex) library allows for [automatic mixed-precision](https://docs.nvidia.com/deeplearning/performance/mixed-precision-training/index.html) (AMP) training and distributed training:
 
@@ -97,7 +97,7 @@ dataset = dset.CIFAR10(root='./', download=True,
                            ]))
 ```
 
-## Multi-Process Service with Slurm
+## Multi-Process Service with Slurm (V100 only)
 
 Add the line below to enable [MPS](https://docs.nvidia.com/deploy/pdf/CUDA_Multi_Process_Service_Overview.pdf):
 
