@@ -76,10 +76,26 @@ To see the half-precision speed up a code, download the [dcgan example](https://
 
 ```
 #SBATCH --cpus-per-task=4
-python main_amp.py --opt_level O1 --dataroot /scratch/network/jdh4/dcgan --num_workers 
-
+[1] python main_amp.py --opt_level O1 --dataroot /scratch/network/jdh4/dcgan --num_workers $SLURM_CPUS_PER_TASK
+[2] python main_amp.py --opt_level O0 --dataroot /scratch/network/jdh4/dcgan --num_workers $SLURM_CPUS_PER_TASK
 ```
 
+On the V100 node, for [1] the run time was found to be 6:59 and [2] gave 9:43. One also gets 9:43 if you go through and stipped all amp code instead of trusting the O0 setting. 
+
+You need to download the data on the head node since compute nodes don't have internet access. This script can be used:
+
+```
+import torchvision
+import torchvision.datasets as dset
+import torchvision.transforms as transforms
+    
+dataset = dset.CIFAR10(root='./', download=True,
+                           transform=transforms.Compose([
+                               transforms.Resize(64),
+                               transforms.ToTensor(),
+                               transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+                           ]))
+```
 
 ## Submitting a Job to TigerGPU
 
