@@ -72,6 +72,15 @@ with amp.scale_loss(loss, optimizer) as scaled_loss:
     scaled_loss.backward()
 ```
 
+To see the half-precision speed up a code, download the [dcgan example](https://github.com/NVIDIA/apex/tree/master/examples/dcgan) and run it with these parameters:
+
+```
+#SBATCH --cpus-per-task=4
+python main_amp.py --opt_level O1 --dataroot /scratch/network/jdh4/dcgan --num_workers 
+
+```
+
+
 ## Submitting a Job to TigerGPU
 
 Create a Slurm scipt such as this (job.slurm):
