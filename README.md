@@ -97,6 +97,14 @@ dataset = dset.CIFAR10(root='./', download=True,
                            ]))
 ```
 
+## Multi-Process Service with Slurm
+
+Add the line below to enable [MPS](https://docs.nvidia.com/deploy/pdf/CUDA_Multi_Process_Service_Overview.pdf):
+
+```
+#SBATCH --gpu-mps
+```
+
 ## Submitting a Job to TigerGPU
 
 Create a Slurm scipt such as this (job.slurm):
