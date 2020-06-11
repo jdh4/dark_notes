@@ -75,7 +75,7 @@ with amp.scale_loss(loss, optimizer) as scaled_loss:
 To see the half-precision speed up a code, download the [dcgan example](https://github.com/NVIDIA/apex/tree/master/examples/dcgan) and run it with these parameters:
 
 ```
-# set download=False for the data set (see below)
+# set download=False in main_amp.py for the data set (see below)
 #SBATCH --cpus-per-task=4
 [1] python main_amp.py --opt_level O1 --dataroot /scratch/network/jdh4/dcgan --num_workers $SLURM_CPUS_PER_TASK
 [2] python main_amp.py --opt_level O0 --dataroot /scratch/network/jdh4/dcgan --num_workers $SLURM_CPUS_PER_TASK
