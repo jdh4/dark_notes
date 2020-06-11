@@ -224,7 +224,7 @@ module purge
 module load anaconda3/2020.2
 conda activate dark-env-v2
 
-nsys profile -o profile_${SLURM_JOBID} --stats=false -t cuda,nvtx,osrt,cublas python _run_graph_net_nv.py
+nsys profile -o profile_${SLURM_JOBID} --trace=cuda,nvtx,osrt,cublas python _run_graph_net_nv.py
 ```
 
 You can either download the `.qdrep` file to your local machine to use `nsight-sys` to view the data or do `ssh -X tigressdata.princeton.edu` and use `nsight-sys` on that machine. The latter approach would look like this:
