@@ -56,7 +56,7 @@ $ cd software/dark
 $ git clone https://github.com/NVIDIA/apex
 $ cd apex
 $ export TORCH_CUDA_ARCH_LIST="7.0"
-$ pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+$ CUDA_HOME=/usr/local/cuda-10.2 pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 ```
 
 The speed-up comes from using the Tensor Cores on the GPU applied to matrix multiplications and convolutions. However, to use fp16 the dimension of each matrix must be a multiple of 8. Read about the constraints [here](https://docs.nvidia.com/deeplearning/performance/mixed-precision-training/index.html#opt-tensor-cores).
