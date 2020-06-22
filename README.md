@@ -187,7 +187,7 @@ $ conda activate dark-env-v2
 Or equivalently:
 
 ```
-$ salloc --nodes=1 --ntasks=4 --time 30:00 --mem=8G --gres=gpu:1
+$ salloc --nodes=1 --ntasks=4 --time=30:00 --mem=8G --gres=gpu:1
 $ module load anaconda3/2020.2
 $ conda activate dark-env-v2
 ```
