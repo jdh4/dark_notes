@@ -77,8 +77,8 @@ To see the half-precision speed up a code, download the [dcgan example](https://
 ```
 # set download=False in main_amp.py for the data set (see below)
 #SBATCH --cpus-per-task=4
-[1] python main_amp.py --opt_level O1 --dataroot /scratch/network/jdh4/dcgan --num_workers $SLURM_CPUS_PER_TASK
-[2] python main_amp.py --opt_level O0 --dataroot /scratch/network/jdh4/dcgan --num_workers $SLURM_CPUS_PER_TASK
+[1] python main_amp.py --opt_level O1 --dataroot /scratch/network/jdh4/dcgan --workers $SLURM_CPUS_PER_TASK
+[2] python main_amp.py --opt_level O0 --dataroot /scratch/network/jdh4/dcgan --workers $SLURM_CPUS_PER_TASK
 ```
 
 On the V100 node, for [1] the run time was found to be 6:59 and [2] gave 9:43. One also gets 9:43 if you go through and strip out all amp code instead of trusting the O0 setting. Note that the choice of O3 gave NaNs. O1 is the recommended optimization level by NVIDIA.
