@@ -376,7 +376,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 See the procedure at the bottom of [this page](https://researchcomputing.princeton.edu/tigergpu-utilization). Consider using this alias which will put you on the compute node where your most recent job is running:
 
 ```
-goto() { ssh $(squeue -u $USER | tail -1 | tr -s [:blank:] | cut -d' ' --fields=9); }
+goto() { ssh $(squeue -u $USER -o "%i %R" -S i -h | tail -n 1 | cut -d' ' -f2); }
 ```
 
 From there you can run `nvidia-smi` or `gpustat`.
